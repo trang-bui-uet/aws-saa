@@ -1,4 +1,4 @@
-This is your new *vault* 2.
+This is your new *vault* 3.
 
 Make a note of something, [[create a link]], or try [the Importer](https://help.obsidian.md/Plugins/Importer)!
 

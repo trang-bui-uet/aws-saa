@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a5ab351f693196c2",
+        "id": "882e0682636b9c66",
         "type": "tabs",
         "children": [
           {
-            "id": "74638f77c19b92df",
+            "id": "80a27bcd3b8076e0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "VPC/01 VPC sizing and structure.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "01 VPC sizing and structure"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "VPC/01 VPC sizing and structure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 01 VPC sizing and structure"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "VPC/01 VPC sizing and structure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from 01 VPC sizing and structure"
             }
           },
           {
@@ -150,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "VPC/01 VPC sizing and structure.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline of 01 VPC sizing and structure"
             }
           },
           {
@@ -174,7 +180,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,8 +195,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1c58420d60eecd3d",
+  "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
+    "VPC/01 VPC sizing and structure.md",
+    "VPC/00 Inbox.md",
+    "Untitled.md",
+    "VPC",
     "Welcome.md"
   ]
 }

@@ -13,7 +13,7 @@ Create custom VPC
 - Personal preference for the 10.x.y.z range 
 - Avoid common ranges - avoid future issues (suggest 10.16)
 - Suggest 2 range of network per region being used per account.
-- 3US, 2EU -> 5*2 - assume 4 account -> total 40 ranges.
+- 3US, 2EU -> 5\*2 - assume 4 account -> total 40 ranges.
 
 **IP Range to avoid**
 - 192.168.10.0/24
@@ -35,6 +35,14 @@ Create custom VPC
 	- How many **IPs total**? How many **per subnet**?
 
 **VPC Structure**
+
+|       | AZ-A | AZ-B | AZ-C | Future |
+| ----- | ---- | ---- | ---- | ------ |
+| WEB   | /20  | /20  | /20  | /20    |
+| APP   | /20  | /20  | /20  | /20    |
+| DB    | /20  | /20  | /20  | /20    |
+| Spare | /20  | /20  | /20  | /20    |
+
 - Services use subnet
 - VPC services run from within subnets
 - Subnet located in one AZ
@@ -47,4 +55,3 @@ Create custom VPC
 **Proposal**
 - Animals4life could become **huge** global entity
 - Use 10.16 -> 10.127 range (avoid Google)
-- 

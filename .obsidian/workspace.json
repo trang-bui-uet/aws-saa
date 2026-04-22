@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VPC/02 Custom VPCs - PART1 - THEORY.md",
+                "file": "EC2/1 Virtualization 101.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 Custom VPCs - PART1 - THEORY"
+              "title": "1 Virtualization 101"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "local",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 338.5
   },
   "right": {
     "id": "2fc9c1f8e2341a29",
@@ -197,12 +197,31 @@
   },
   "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "VPC/00 Inbox.md",
-    "VPC/01 VPC sizing and structure.md",
-    "VPC/02 Custom VPCs - PART1 - THEORY.md",
-    "VPC/03 VPC Subnets.md",
+    "VPC/08 Security Groups (SG).md",
+    "EC2/1 Virtualization 101.md",
+    "EC2",
+    "VPC/07 Network Access Control Lists (NACLs).md",
+    "VPC/06 Stateful vs Stateless Firewalls.md",
+    "VPC/05 DEMO Configuring A4L public subnets and Jumpbox.md",
     "VPC/04 VPC Routing, Internet Gateway & Bastion Hosts.md",
+    "VPC/03 VPC Subnets.md",
+    "VPC/02 Custom VPCs - PART1 - THEORY.md",
+    "VPC/01 VPC sizing and structure.md",
+    "VPC/00 Inbox.md",
+    "VPC/10 Network Address Translation (NAT) & NAT Gateway - PART 2.md",
+    "Untitled.base",
+    "Untitled 1.base",
+    "VPC/09 Network Address Translation (NAT) & NAT Gateway - PART 1.md",
+    "Attachments/Pasted image 20260409221536.png",
+    "Attachments/Pasted image 20260409221114.png",
+    "Attachments/Pasted image 20260409220810.png",
+    "Attachments/Pasted image 20260409212956.png",
+    "Attachments/Pasted image 20260409211739.png",
+    "Attachments/Pasted image 20260409211624.png",
+    "Attachments/Pasted image 20260409211622.png",
+    "Attachments/Pasted image 20260401221846.png",
+    "Attachments/Pasted image 20260401221728.png",
+    "conflict-files-obsidian-git.md",
     "Attachments/Pasted image 20260401172746.png",
     "Attachments",
     "Untitled.md",

@@ -5,6 +5,7 @@ Start simple and add more and more complexity
 - Regional service - All AZs in the region
 - Allow you to create isolated network inside AWS
 - Nothing **IN** or **OUT** without explicit configuration
+	- Muốn ra internet phải cấu hình Route Table + IGW or NAT Gateway
 - Flexible configuration - simple or multi-tier
 - Hybrid networking - other cloud and on-premises
 - **Default** or **Dedicated Tenancy**!
@@ -12,7 +13,7 @@ Start simple and add more and more complexity
 - IPv4 Private CIDR Blocks and Public IPs
 - 1 Primary Private IPv4 CIDR Block
 - ...Min /28 (16 IPs) Max /16 (65536 IPs)
-- Optional secondary IPv4 Blocks
+- Optional secondary IPv4 Blocks (max 4 secondary IPv4 block) ( 5 Total = 1 Primary IPv4 CIDR + 4 Secondary IPv4 CIDR)
 - Optional single assigned IPv6/56 CIDR block
 
 **DNS in a VPC**

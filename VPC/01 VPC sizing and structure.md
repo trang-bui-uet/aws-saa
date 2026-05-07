@@ -16,7 +16,7 @@ Create custom VPC
 - 3US, 2EU -> 5\*2 - assume 4 account -> total 40 ranges.
 
 **IP Range to avoid**
-- 192.168.10.0/24
+- 192.168.10.0/24 (Rải IP phổ biến trong router gia đình)
 - 10.0.0.0/16 (AWS)
 - 172.31.0.0/16 (Azure)
 - Google 10.128.0.0/9

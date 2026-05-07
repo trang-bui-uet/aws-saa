@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VPC/02 Custom VPCs - PART1 - THEORY.md",
+                "file": "VPC/03 VPC Subnets.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 Custom VPCs - PART1 - THEORY"
+              "title": "03 VPC Subnets"
             }
           }
         ]
@@ -197,15 +197,15 @@
   },
   "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "VPC/00 Inbox.md",
-    "VPC/01 VPC sizing and structure.md",
-    "VPC/02 Custom VPCs - PART1 - THEORY.md",
-    "VPC/03 VPC Subnets.md",
+    "2FA.md",
     "VPC/04 VPC Routing, Internet Gateway & Bastion Hosts.md",
+    "Attachments/Pasted image 20260403114706.png",
+    "VPC/02 Custom VPCs - PART1 - THEORY.md",
     "Attachments/Pasted image 20260401172746.png",
     "Attachments",
-    "Untitled.md",
+    "VPC/03 VPC Subnets.md",
+    "VPC/01 VPC sizing and structure.md",
+    "VPC/00 Inbox.md",
     "VPC",
     "Welcome.md"
   ]

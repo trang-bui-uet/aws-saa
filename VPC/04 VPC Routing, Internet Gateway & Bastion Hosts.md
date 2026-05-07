@@ -34,3 +34,4 @@ How routing work, Internet Gateway, How config VPC so that data exit to and ente
 - Incoming management connections arrive there
 - Then access internal VPC resources
 - Often the only way IN to a VPC
+

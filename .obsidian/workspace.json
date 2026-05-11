@@ -197,6 +197,8 @@
   },
   "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
+    "_Attachments/Pasted image 20260511173224.png",
+    "2. EC2/4 EC2 Instance Type - Part 2.md",
     "Pasted image 20260510231446.png",
     "Pasted image 20260510105743.png",
     "2. EC2/2 EC2 Architecture and Resilience.md",
@@ -211,7 +213,6 @@
     "_Attachments/Pasted image 20260508101458.png",
     "_Attachments/Pasted image 20260508094948.png",
     "_Attachments/Pasted image 20260508094910.png",
-    "_Attachments/Pasted image 20260409221536.png",
     "_Attachments/2FA.md",
     "_Attachments",
     "2. EC2/1 Virtualization 101.md",
@@ -241,7 +242,6 @@
     "VPC/07 Network Access Control Lists (NACLs).md",
     "VPC/06 Stateful vs Stateless Firewalls.md",
     "VPC/05 DEMO Configuring A4L public subnets and Jumpbox.md",
-    "VPC/04 VPC Routing, Internet Gateway & Bastion Hosts.md",
-    "VPC/03 VPC Subnets.md"
+    "VPC/04 VPC Routing, Internet Gateway & Bastion Hosts.md"
   ]
 }

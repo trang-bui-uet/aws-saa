@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. EC2/5 Storage Refresher.md",
+                "file": "2. EC2/7 EBS Volume Types.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5 Storage Refresher"
+              "title": "7 EBS Volume Types"
             }
           }
         ]
@@ -197,8 +197,16 @@
   },
   "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
-    "2. EC2/4 EC2 Instance Type - Part 2.md",
+    "Pasted image 20260517230509.png",
+    "2. EC2/6 Elastic Block Store (EBS).md",
+    "2. EC2/7 EBS Volume Types.md",
+    "_Attachments/Pasted image 20260514225514.png",
+    "_Attachments/Pasted image 20260514214844.png",
     "2. EC2/5 Storage Refresher.md",
+    "_Attachments/Pasted image 20260514212322.png",
+    "_Attachments/Pasted image 20260514211532.png",
+    "_Attachments/Pasted image 20260514211356.png",
+    "2. EC2/4 EC2 Instance Type - Part 2.md",
     "_Attachments/Pasted image 20260510105743.png",
     "_Attachments/Pasted image 20260510231446.png",
     "2. EC2/3 EC2 Instance Types.md",
@@ -208,11 +216,6 @@
     "EC2/1 Virtualization 101.md",
     "_Attachments/Pasted image 20260508111719.png",
     "_Attachments/Pasted image 20260508110621.png",
-    "_Attachments/Pasted image 20260508103054.png",
-    "_Attachments/Pasted image 20260508101534.png",
-    "_Attachments/Pasted image 20260508101500.png",
-    "_Attachments/Pasted image 20260508101458.png",
-    "_Attachments/Pasted image 20260508094948.png",
     "_Attachments/2FA.md",
     "_Attachments",
     "2. EC2/1 Virtualization 101.md",
@@ -239,9 +242,6 @@
     "review",
     "VPC/08 Security Groups (SG).md",
     "EC2",
-    "VPC/07 Network Access Control Lists (NACLs).md",
-    "VPC/06 Stateful vs Stateless Firewalls.md",
-    "VPC/05 DEMO Configuring A4L public subnets and Jumpbox.md",
-    "VPC/04 VPC Routing, Internet Gateway & Bastion Hosts.md"
+    "VPC/07 Network Access Control Lists (NACLs).md"
   ]
 }

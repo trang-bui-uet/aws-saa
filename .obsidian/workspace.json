@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. EC2/17 EC2 Purchase Options - PART2.md",
+                "file": "2. EC2/18 Reserved Instances - the rest.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "17 EC2 Purchase Options - PART2"
+              "title": "18 Reserved Instances - the rest"
             }
           }
         ]
@@ -197,12 +197,16 @@
   },
   "active": "1c58420d60eecd3d",
   "lastOpenFiles": [
+    "_Attachments/Pasted image 20260527001336.png",
+    "_Attachments/Pasted image 20260527001254.png",
+    "_Attachments/Pasted image 20260527001228.png",
+    "2. EC2/17 EC2 Purchase Options - PART2.md",
+    "2. EC2/18 Reserved Instances - the rest.md",
     "_Attachments/Pasted image 20260525232231.png",
     "_Attachments/Pasted image 20260525232158.png",
     "_Attachments/Pasted image 20260525232113.png",
     "_Attachments/Pasted image 20260525232104.png",
     "2. EC2/16 EC2 Purchase Options - PART1.md",
-    "2. EC2/17 EC2 Purchase Options - PART2.md",
     "_Attachments/Pasted image 20260525223911.png",
     "2. EC2/15 Amazon Machine Images (AMI).md",
     "_Attachments/Pasted image 20260523234023.png",
@@ -210,11 +214,8 @@
     "_Attachments/Pasted image 20260523001005.png",
     "Pasted image 20260523000741.png",
     "2. EC2/2 EC2 Architecture and Resilience.md",
-    "_Attachments/Pasted image 20260522003452.png",
     "2. EC2/13 EBS Encryption.md",
-    "_Attachments/Pasted image 20260520234429.png",
     "2. EC2/12 EBS Snapshots, Restore & Fast Snapshot Restore (FSR).md",
-    "_Attachments/Pasted image 20260519224627.png",
     "2. EC2/10 Instance Store Volumes - Architecture.md",
     "2. EC2/8 EBS Volume Types - HDD-Based.md",
     "2. EC2/7 EBS Volume Types - General Purpose.md",
@@ -234,7 +235,6 @@
     "1. VPC/09 Network Address Translation (NAT) & NAT Gateway - PART 1.md",
     "1. VPC/08 Security Groups (SG).md",
     "1. VPC/07 Network Access Control Lists (NACLs).md",
-    "1. VPC/06 Stateful vs Stateless Firewalls.md",
     "1. VPC",
     "review/sessions",
     "review/state/srs-state.json",

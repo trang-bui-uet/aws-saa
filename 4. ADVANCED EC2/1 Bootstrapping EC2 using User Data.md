@@ -1,0 +1,65 @@
+Chào mừng các bạn đã quay trở lại. Trong bài học thực tế đầu tiên của phần EC2 nâng cao thuộc khóa học này, tôi muốn giới thiệu về **EC2 bootstrapping (khởi động đồng bộ EC2)**. Đây là một trong những tính năng mạnh mẽ nhất của EC2 dành cho chúng ta với tư cách là các Kiến trúc sư giải pháp (Solutions Architects), bởi vì nó **cho phép chúng ta bắt đầu thêm tính năng tự động hóa (automation) vào các giải pháp mà mình thiết kế**.
+
+**Bootstrapping là một quá trình mà các đoạn mã kịch bản (scripts) hoặc các phần cấu hình khác có thể được chạy khi một instance (thực thể máy ảo) lần đầu tiên được khởi chạy (launched)**, nghĩa là một instance có thể được đưa vào hoạt động ở một trạng thái được cấu hình sẵn nhất định. Vì vậy, khác với việc chỉ khởi chạy một instance với một AMI rồi để nó ở trạng thái mặc định, chúng ta có thể **bootstrap một tập hợp các cấu hình hoặc cài đặt phần mềm cụ thể**. Bây giờ, chúng ta hãy cùng xem xét cách thức hoạt động của nó dưới góc độ lý thuyết, và sau đó bạn sẽ có cơ hội tự mình triển khai điều này trong bài học demo tiếp theo.
+
+**Bootstrapping là một quá trình tồn tại bên ngoài EC2. Đây là một thuật ngữ chung.** Trong tự động hóa hệ thống (systems automation), bootstrapping là một quá trình cho phép một hệ thống tự cấu hình hoặc thực hiện một số bước tự cấu hình. Trong EC2, nó **cho phép tự động hóa việc xây dựng (build automation)**, tức là một số bước có thể diễn ra khi bạn khởi chạy một instance để đưa instance đó vào trạng thái đã được cấu hình. Thay vì phụ thuộc vào một AMI mặc định hoặc một AMI với cấu hình được "nướng" sẵn (pre-baked configuration), nó cho phép bạn **chỉ thị cho một EC2 instance thực hiện một việc gì đó khi được khởi chạy**, chẳng hạn như thực hiện một số cài đặt phần mềm và sau đó là một số cấu hình sau cài đặt (post-installation configuration).
+
+Với EC2, **bootstrapping được kích hoạt bằng cách sử dụng EC2 user data (dữ liệu người dùng)**, và dữ liệu này được chèn vào instance theo cùng một cách mà metadata (siêu dữ liệu) được chèn vào. Trên thực tế, nó được truy cập bằng cách sử dụng địa chỉ IP metadata, đó là **169.254.169.254**, hay còn được gọi là chuỗi 169.254 lặp lại. Nhưng thay vì đường dẫn `latest/meta-data`, nó sẽ là **`latest/user-data`**.
+
+User data là một mẩu dữ liệu, một mẩu thông tin mà bạn có thể truyền vào một EC2 instance. Bất kỳ thứ gì bạn truyền vào đều được hệ điều hành của instance đó thực thi. Và đây là điều quan trọng cần nhớ: **nó chỉ được thực thi DUY NHẤT MỘT LẦN vào thời điểm khởi chạy (launch time)**. Nếu bạn cập nhật user data và khởi động lại (restart) một instance, nó sẽ không được thực thi lại. Vì vậy, nó chỉ chạy một lần duy nhất. **User data chỉ áp dụng cho lần khởi chạy ban đầu đầu tiên của instance.** Nó chỉ dành cho việc cấu hình tại thời điểm khởi chạy mà thôi.
+
+Một khía cạnh quan trọng khác là **dịch vụ EC2 không xác thực (validate) dữ liệu user data này. Nó không diễn giải (interpret) dữ liệu đó theo bất kỳ cách nào.** Bạn có thể bảo EC2 truyền vào một số dữ liệu ngẫu nhiên, và nó sẽ làm theo. Bạn có thể bảo EC2 truyền vào các lệnh có thể xóa toàn bộ dữ liệu trên ổ đĩa khởi động (boot volume), và instance sẽ thực hiện điều đó. EC2 không diễn giải dữ liệu, nó chỉ truyền dữ liệu vào instance thông qua user data, và **có một tiến trình trên hệ điều hành sẽ chạy dữ liệu này với tư cách là người dùng root (root user)**. Tóm lại, bản thân instance cần phải hiểu những gì bạn truyền vào vì nó sẽ chỉ đơn giản là chạy nó.
+
+Kiến trúc bootstrapping khá đơn giản để hiểu. Một AMI được sử dụng để khởi chạy một EC2 instance theo cách thông thường, và việc này tạo ra một ổ đĩa EBS được gắn vào EC2 instance, dĩ nhiên là dựa trên sơ đồ ánh xạ thiết bị khối (block device mapping) bên trong AMI. Phần này chúng ta đã hiểu rõ rồi. Nơi cấu trúc này bắt đầu khác biệt là **giờ đây dịch vụ EC2 cung cấp một số user data xuyên suốt vào EC2 instance**. Và có một phần mềm nằm trong hệ điều hành chạy trên các EC2 instance được thiết kế để **kiểm tra địa chỉ IP metadata xem có bất kỳ user data nào không**. Và nếu nó thấy bất kỳ user data nào, **nó sẽ thực thi dữ liệu này khi khởi chạy instance đó**.
+
+User data này được xử lý giống như bất kỳ đoạn script nào khác mà hệ điều hành chạy. Nó cần phải hợp lệ. Và sau khi chạy xong script, EC2 instance sẽ rơi vào một trong hai trường hợp:
+
+1. **Nằm trong trạng thái đang chạy (running) và sẵn sàng hoạt động (ready for service)**, nghĩa là instance đã hoàn thành quá trình khởi động, user data đã chạy và thành công, và instance ở trong trạng thái hoạt động bình thường và có đầy đủ chức năng.
+    
+2. **Trường hợp xấu nhất là user data bị lỗi theo một cách nào đó.** Khi đó, **instance vẫn sẽ ở trong trạng thái đang chạy (running)** bởi vì user data tách biệt với EC2. EC2 chỉ chuyển nó vào bên trong instance mà thôi. Instance vẫn sẽ vượt qua các bước kiểm tra trạng thái (status checks), và giả sử bạn không chạy bất kỳ thứ gì xóa một lượng lớn dữ liệu của hệ điều hành, bạn có thể vẫn kết nối được với nó. Tuy nhiên, **instance có khả năng cao sẽ không được cấu hình như bạn mong muốn. Đó sẽ là một cấu hình lỗi (bad configuration)**.
+    
+
+Vì vậy, điều đó cực kỳ quan trọng để hiểu. User data chỉ được truyền vào hệ điều hành một cách mờ đục (opaque/nguyên bản không can thiệp). Việc thực thi nó là tùy thuộc vào hệ điều hành. Và nếu được thực thi chính xác, instance sẽ sẵn sàng hoạt động. Nếu có vấn đề với user data, bạn sẽ có một cấu hình lỗi. Đây là một trong những yếu tố cốt lõi của user data cần phải nắm vững. Nó là một trong những tính năng mạnh mẽ nhưng cũng là một trong những tính năng đầy rủi ro. Bạn truyền cho instance một khối dữ liệu user data. Nó chạy thành công hay không thì dưới góc nhìn của EC2, đó đơn thuần chỉ là dữ liệu mờ đục. EC2 không biết và cũng không quan tâm điều gì xảy ra với nó.
+
+Ngoài ra, **user data cũng không hề bảo mật**. Bất kỳ ai có quyền truy cập vào hệ điều hành của instance đều có thể truy cập vào user data, vì vậy **đừng sử dụng nó để truyền vào bất kỳ thông tin xác thực dài hạn (long-term credentials) nào**, ít nhất là về mặt lý tưởng. Tuy nhiên, trong bài demo, chúng ta sẽ làm chính xác điều đó. Chúng ta sẽ thực hiện một hành vi không chuẩn chỉnh (bad practice) bằng cách truyền vào instance một số thông tin xác thực dài hạn thông qua user data, nhưng đây là việc làm có chủ đích. Đó là một phần trong quá trình học tập của bạn. Khi chúng ta tiếp tục đi sâu vào khóa học, chúng ta sẽ phát triển thiết kế và triển khai để sử dụng nhiều dịch vụ AWS hơn, và một số dịch vụ này bao gồm các cách tốt hơn để quản lý các bí mật (secrets) bên trong EC2. Vì vậy, tôi cần chỉ cho bạn thấy hành vi không chuẩn chỉnh trước khi tôi có thể so sánh nó với hành vi chuẩn chỉnh (good practice).
+
+Bên cạnh đó, **user data bị giới hạn kích thước ở mức 16 kilobyte**. Đối với bất kỳ thứ gì phức tạp hơn mức đó, bạn sẽ cần phải truyền vào một đoạn script có chức năng tải xuống phần dữ liệu lớn hơn đó. User data có thể được sửa đổi. Nếu bạn tắt (shut down) instance, thay đổi user data và khởi động lại (start) nó, thì dữ liệu mới sẽ có sẵn bên trong user data của instance. Nhưng **nội dung của nó chỉ được thực thi một lần khi bạn khởi chạy instance đó ban đầu**. Do đó, sau giai đoạn khởi chạy, user data chỉ thực sự hữu ích cho việc truyền dữ liệu vào, và có những cách tốt hơn để làm điều đó. Vì vậy, hãy lưu ý cho kỳ thi: **user data thường được sử dụng một lần cho việc cấu hình sau khi khởi chạy của một instance. Nó chỉ được thực thi duy nhất một lần đầu tiên.**
+
+Một trong những dạng câu hỏi mà bạn sẽ thường xuyên đối mặt trong kỳ thi liên quan đến việc **bạn có thể đưa một instance vào hoạt động nhanh đến mức nào**. Thực tế có một chỉ số gọi là: **thời gian từ lúc boot đến lúc hoạt động (boot time to service time)**. Sau khi bạn khởi chạy một instance, mất bao lâu để nó sẵn sàng hoạt động, sẵn sàng chấp nhận các kết nối từ khách hàng của bạn? Chỉ số này bao gồm thời gian mà AWS cần để cấp phát (provision) EC2 instance và thời gian cần thiết cho bất kỳ cập nhật phần mềm, cài đặt hoặc cấu hình nào diễn ra bên trong hệ điều hành. Đối với một AMI do AWS cung cấp, thời gian đó có thể được tính bằng phút. Từ thời điểm khởi chạy đến thời điểm hoạt động thường chỉ mất vài phút.
+
+Nhưng điều gì xảy ra nếu bạn cần thực hiện thêm một số cấu hình bổ sung, chẳng hạn như cài đặt một ứng dụng? Bạn còn nhớ khi bạn cài đặt WordPress thủ công sau khi khởi chạy một instance không? Quá trình này được gọi là **thời gian sau khởi chạy (post-launch time)**, tức là thời gian cần thiết sau khi khởi chạy để bạn thực hiện cấu hình thủ công hoặc cấu hình tự động trước khi instance sẵn sàng hoạt động. Nếu bạn làm điều đó một cách thủ công, quá trình này có thể mất vài phút hoặc thậm chí kéo dài vài giờ đối với những thứ phức tạp hơn đáng kể.
+
+Bạn có thể rút ngắn thời gian sau khởi chạy này theo một vài cách:
+
+- **Chủ đề của chính bài học này là bootstrapping**, và bootstrapping với tư cách là một quá trình sẽ **tự động hóa các hoạt động cài đặt sau khi khởi chạy một instance, và điều này làm giảm lượng thời gian cần thiết để thực hiện các bước này**. Bạn sẽ thấy điều đó được demo trong bài học tiếp theo.
+    
+- Hoặc cách khác, bạn cũng có thể thực hiện công việc này trước bằng phương pháp **AMI baking (nướng AMI)**. Với phương pháp này, bạn đang **chuẩn bị trước công việc (front-loading the work), thực hiện nó từ trước và tạo ra một AMI với tất cả công việc đó được tích hợp sẵn (baked in)**. Phương pháp này giúp **loại bỏ thời gian sau khởi chạy (post-launch time)**, nhưng nó đồng nghĩa với việc bạn **không thể linh hoạt với cấu hình** vì mọi thứ đã phải được nướng sẵn vào AMI rồi.
+    
+
+**Cách tối ưu nhất là kết hợp cả hai quá trình này lại với nhau, nghĩa là sử dụng cả AMI baking và bootstrapping.** Bạn sẽ sử dụng AMI baking cho bất kỳ phần nào của quá trình tốn nhiều thời gian. Ví dụ, nếu bạn có một quy trình cài đặt ứng dụng tốn 90% thời gian cho việc cài đặt và 10% thời gian cho việc cấu hình, bạn có thể **AMI bake phần 90% đó vào trước và sau đó bootstrap phần cấu hình 10% cuối cùng**. Bằng cách đó, bạn vừa giảm được thời gian sau khởi chạy (post-launch time) và do đó giảm được thời gian từ lúc boot đến lúc hoạt động (boot time to service time), nhưng bạn cũng vừa tận dụng được bootstrapping để mang lại cho bạn **khả năng cấu hình cao hơn rất nhiều**. Tôi sẽ minh họa kiến trúc này ở phần sau của khóa học khi tôi đề cập đến vấn đề mở rộng (scaling) và tính sẵn sàng cao (high availability), nhưng tôi muốn giới thiệu các khái niệm này ngay bây giờ để bạn có thể suy ngẫm và hiểu được chúng khi tôi nhắc lại sau này.
+
+Giờ đã đến lúc kết thúc bài học này, và đây là phần lý thuyết về EC2 bootstrapping. Trong bài học tiếp theo (một bài thực hành demo), bạn sẽ có cơ hội sử dụng tính năng EC2 user data. Bạn còn nhớ ở phần trước của khóa học, chúng ta đã cùng nhau xây dựng một AMI không? Chúng ta đã cài đặt WordPress đến thời điểm nó sẵn sàng để thiết lập, và chúng ta đã cải thiện mạnh mẽ biểu ngữ đăng nhập (login banner) của EC2 instance để biến nó thành một thứ gì đó liên quan đến động vật nhiều hơn với lệnh `cowsay`. Trong bài học demo tiếp theo, bạn sẽ triển khai chính điều tương tự như vậy, nhưng **bạn sẽ sử dụng user data**. Bạn sẽ thấy **quá trình này diễn ra nhanh hơn bao nhiêu** so với khi bạn phải khởi chạy instance một cách thủ công và chạy từng lệnh một. Đó sẽ là một bài demo hay và giá trị. Tôi rất nóng lòng được bắt đầu. Vì vậy, hãy hoàn thành video này, và khi bạn đã sẵn sàng, bạn có thể tham gia cùng tôi để bước vào thời gian thực hành.
+
+---
+
+**Tóm tắt theo Cornell Note**
+
+**Cues (Từ khóa / Ý chính):**
+
+- EC2 Bootstrapping & User Data
+- Thực thi chỉ một lần tại launch time
+- User Data qua metadata (169.254.169.254/latest/user-data)
+- Rủi ro & Best practices (không lưu credentials)
+- Boot time to service time vs Post-launch time
+- So sánh Bootstrapping & AMI Baking & Kết hợp cả hai
+
+**Notes (Chi tiết):**
+
+- **User Data**: Script/config chạy tự động khi instance launch lần đầu (chỉ 1 lần, không chạy lại khi restart). EC2 không validate, chỉ truyền opaque data → instance (root) tự thực thi.
+- Giới hạn **16KB**; không bảo mật (ai có quyền truy cập OS đều xem được) → tránh long-term credentials.
+- Instance vẫn **running** ngay cả khi user data lỗi → cần kiểm tra thủ công.
+- **Boot time to service time**: Thời gian từ launch đến sẵn sàng phục vụ (bao gồm provision + post-launch config).
+- **AMI Baking**: Chuẩn bị sẵn config vào AMI (nhanh nhưng kém linh hoạt). **Bootstrapping**: Tự động config sau launch (linh hoạt hơn).
+- **Tối ưu**: Kết hợp cả hai để cân bằng tốc độ và tính linh hoạt.
+
+**Summary (Tóm tắt ngắn):** Bài học lý thuyết giới thiệu **EC2 Bootstrapping** sử dụng **User Data** để tự động hóa cấu hình instance ngay khi launch (chỉ 1 lần). Giúp rút ngắn **post-launch time**, cải thiện **boot time to service time**. Nhấn mạnh rủi ro, giới hạn, và cách kết hợp với **AMI Baking** là best practice cho Solutions Architect. Chuẩn bị cho demo thực hành cài WordPress + custom banner nhanh chóng qua user data.

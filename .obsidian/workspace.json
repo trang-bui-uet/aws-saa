@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4. ADVANCED EC2/5 [DEMO] CFN-INIT and CFN Creation Policies.md",
+                "file": "4. ADVANCED EC2/1 Bootstrapping EC2 using User Data.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5 [DEMO] CFN-INIT and CFN Creation Policies"
+              "title": "1 Bootstrapping EC2 using User Data"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "local",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 338.5
+    "width": 300
   },
   "right": {
     "id": "2fc9c1f8e2341a29",
@@ -197,51 +197,46 @@
   },
   "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
-    "4. ADVANCED EC2/4 Enhanced Bootstrapping with CFN-INIT.md",
-    "4. ADVANCED EC2/5 [DEMO] CFN-INIT and CFN Creation Policies.md",
-    "4. ADVANCED EC2/3 [DEMO] Bootstrapping Wordpress Installation - PART2.md",
     "4. ADVANCED EC2/2 [DEMO] Bootstrapping Wordpress Installation - PART1.md",
-    "4. ADVANCED EC2/1 Bootstrapping EC2 using User Data.md",
-    "4. ADVANCED EC2/7 [DEMO] Using EC2 Instance Roles.md",
-    "2. EC2/18 Reserved Instances - the rest.md",
-    "4. ADVANCED EC2/6 EC2 Instance Roles & Profile.md",
+    "4. ADVANCED EC2/15 Enhanced Networking & EBS Optimized.md",
+    "4. ADVANCED EC2/14 Dedicated Hosts.md",
+    "4. ADVANCED EC2/13 EC2 Placement Groups.md",
+    "4. ADVANCED EC2/12 [DEMO] Logging and Metrics with CloudWatch Agent-PART2.md",
+    "4. ADVANCED EC2/11 [DEMO] Logging and Metrics with CloudWatch Agent-PART1.md",
+    "4. ADVANCED EC2/10 System and Application Logging on EC2.md",
+    "4. ADVANCED EC2/9 [DEMO] Parameter Store.md",
+    "4. ADVANCED EC2/8 SSM Parameter Store.md",
+    "1. VPC/02 Custom VPCs - PART1 - THEORY.md",
     "1. VPC/01 VPC sizing and structure.md",
     "1. VPC/00 Inbox.md",
-    "3. CONTAINERS & ECS/3 ECS - Cluster Mode.md",
-    "4. ADVANCED EC2",
-    "3. CONTAINERS & ECS/6 Elastic Kubernetes Service (EKS) 101.md",
-    "3. CONTAINERS & ECS/2 ECS - Concepts.md",
-    "3. CONTAINERS & ECS/5 Kubernetes 101.md",
-    "3. CONTAINERS & ECS/4 Elastic Container Registry (ECR).md",
-    "3. CONTAINERS & ECS/1 Introduction to Containers.md",
-    "2. EC2/21 Instance Metadata.md",
-    "3. CONTAINERS & ECS",
-    "2. EC2/20 Horizontal & Vertical Scaling.md",
-    "2. EC2/19 Instance Status Checks & Auto Recovery.md",
+    "4. ADVANCED EC2/6 EC2 Instance Roles & Profile.md",
+    "4. ADVANCED EC2/5 [DEMO] CFN-INIT and CFN Creation Policies.md",
+    "4. ADVANCED EC2/4 Enhanced Bootstrapping with CFN-INIT.md",
+    "2. EC2/9 Choosing between the EC2 Instance Store and EBS.md",
     "_Attachments/Pasted image 20260527001336.png",
     "_Attachments/Pasted image 20260527001254.png",
     "_Attachments/Pasted image 20260527001228.png",
-    "2. EC2/17 EC2 Purchase Options - PART2.md",
     "_Attachments/Pasted image 20260525232231.png",
     "_Attachments/Pasted image 20260525232158.png",
     "_Attachments/Pasted image 20260525232113.png",
     "_Attachments/Pasted image 20260525232104.png",
-    "2. EC2/16 EC2 Purchase Options - PART1.md",
     "_Attachments/Pasted image 20260525223911.png",
-    "2. EC2/15 Amazon Machine Images (AMI).md",
     "_Attachments/Pasted image 20260523234023.png",
-    "2. EC2/14 Network Interfaces, Instance IPs and DNS.md",
     "_Attachments/Pasted image 20260523001005.png",
-    "2. EC2/2 EC2 Architecture and Resilience.md",
-    "2. EC2/13 EBS Encryption.md",
-    "2. EC2/12 EBS Snapshots, Restore & Fast Snapshot Restore (FSR).md",
-    "_Attachments",
+    "4. ADVANCED EC2/3 [DEMO] Bootstrapping Wordpress Installation - PART2.md",
+    "4. ADVANCED EC2/7 [DEMO] Using EC2 Instance Roles.md",
+    "4. ADVANCED EC2/1 Bootstrapping EC2 using User Data.md",
+    "4. ADVANCED EC2",
+    "3. CONTAINERS & ECS/3 ECS - Cluster Mode.md",
+    "3. CONTAINERS & ECS/6 Elastic Kubernetes Service (EKS) 101.md",
+    "3. CONTAINERS & ECS/5 Kubernetes 101.md",
+    "3. CONTAINERS & ECS/4 Elastic Container Registry (ECR).md",
+    "3. CONTAINERS & ECS/2 ECS - Concepts.md",
+    "3. CONTAINERS & ECS/1 Introduction to Containers.md",
+    "3. CONTAINERS & ECS",
+    "2. EC2/8 EBS Volume Types - HDD-Based.md",
     "2. EC2",
-    "1. VPC",
-    "review/sessions",
-    "review/state/srs-state.json",
-    "review/state",
-    "review/cards/cards.json",
-    "review/cards"
+    "_Attachments",
+    "1. VPC"
   ]
 }

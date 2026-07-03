@@ -1,3 +1,4 @@
+![[Pasted image 20260610111100.png]]
 ### Giới thiệu về **cfn-init**
 
 Trong bài trước, CloudFormation xử lý **User Data** bằng cách truyền dữ liệu đã mã hóa **Base64** vào instance, sau đó hệ điều hành chạy nó như một shell script.
@@ -21,6 +22,8 @@ Bạn chỉ cần mô tả **trạng thái mong muốn** của instance, **cfn-i
 - Quản lý **services** (start, enable, restart).
 
 **cfn-init** được gọi từ **User Data**, nhưng lấy cấu hình từ **CloudFormation stack** thông qua phần **Metadata** với **AWS::CloudFormation::Init** trong template.
+
+![[Pasted image 20260610111858.png]]
 
 ### Kiến trúc hoạt động của cfn-init
 

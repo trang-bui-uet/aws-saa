@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6. Relational Database Service (RDS)/10 RDS Automatic Backup, RDS Snapshots and Restore.md",
+                "file": "6. Relational Database Service (RDS)/11 RDS Read-Replicas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10 RDS Automatic Backup, RDS Snapshots and Restore"
+              "title": "11 RDS Read-Replicas"
             }
           }
         ],
@@ -212,6 +212,7 @@
   },
   "active": "5f63f61a9a8a9dd2",
   "lastOpenFiles": [
+    "6. Relational Database Service (RDS)/10 RDS Automatic Backup, RDS Snapshots and Restore.md",
     "6. Relational Database Service (RDS)/9 Relational Database Service (RDS) MultiAZ - Instance and Cluster.md",
     "6. Relational Database Service (RDS)/7 [DEMO] Migrating EC2 DB into RDS - PART1.md",
     "6. Relational Database Service (RDS)/6 Relational Database Service (RDS) Architecture.md",
@@ -241,7 +242,6 @@
     "6. Relational Database Service (RDS)/13 [DEMO] MultiAZ & Snapshot Restore with RDS - PART2.md",
     "6. Relational Database Service (RDS)/12 [DEMO] MultiAZ & Snapshot Restore with RDS - PART1.md",
     "6. Relational Database Service (RDS)/11 RDS Read-Replicas.md",
-    "6. Relational Database Service (RDS)/10 RDS Automatic Backup, RDS Snapshots and Restore.md",
     "6. Relational Database Service (RDS)/8 [DEMO] Migrating EC2 DB into RDS - PART2.md",
     "5. Route 53 - Global DNS/8 [DEMO] Using R53 and Failover Routing-PART2.md",
     "6. Relational Database Service (RDS)",

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6. Relational Database Service (RDS)/15 RDS Custom.md",
+                "file": "6. Relational Database Service (RDS)/16 Aurora Architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15 RDS Custom"
+              "title": "16 Aurora Architecture"
             }
           }
         ],
@@ -212,6 +212,11 @@
   },
   "active": "5f63f61a9a8a9dd2",
   "lastOpenFiles": [
+    "6. Relational Database Service (RDS)/2 Database Refresher & MODELS - PART2.md",
+    "6. Relational Database Service (RDS)/1 Database Refresher & MODELS - PART1.md",
+    "6. Relational Database Service (RDS)/17 Aurora Serverless.md",
+    "6. Relational Database Service (RDS)/15 RDS Custom.md",
+    "6. Relational Database Service (RDS)/16 Aurora Architecture.md",
     "Pasted image 20260729012157.png",
     "6. Relational Database Service (RDS)/14 RDS Data Security.md",
     "Pasted image 20260729011327.png",
@@ -231,19 +236,13 @@
     "6. Relational Database Service (RDS)/4 Databases on EC2.md",
     "_Attachments/Pasted image 20260715222712.png",
     "6. Relational Database Service (RDS)/3 ACID vs BASE.md",
-    "6. Relational Database Service (RDS)/2 Database Refresher & MODELS - PART2.md",
     "_Attachments/Pasted image 20260715225702.png",
     "_Attachments/Pasted image 20260715223437.png",
     "_Attachments/Pasted image 20260715223209.png",
-    "_Attachments/Pasted image 20260715223006.png",
-    "6. Relational Database Service (RDS)/1 Database Refresher & MODELS - PART1.md",
     "6. Relational Database Service (RDS)/21 Database Migration Service (DMS).md",
     "6. Relational Database Service (RDS)/20 Relational Database Service (RDS) - RDS Proxy.md",
     "6. Relational Database Service (RDS)/19 Multi-master writes.md",
     "6. Relational Database Service (RDS)/18 Aurora Global Database.md",
-    "6. Relational Database Service (RDS)/17 Aurora Serverless.md",
-    "6. Relational Database Service (RDS)/16 Aurora Architecture.md",
-    "6. Relational Database Service (RDS)/15 RDS Custom.md",
     "6. Relational Database Service (RDS)/8 [DEMO] Migrating EC2 DB into RDS - PART2.md",
     "5. Route 53 - Global DNS/8 [DEMO] Using R53 and Failover Routing-PART2.md",
     "6. Relational Database Service (RDS)",

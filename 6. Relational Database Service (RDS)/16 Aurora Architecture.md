@@ -16,6 +16,8 @@ Vì Aurora duy trì **nhiều bản sao dữ liệu trên ba Availability Zone**
 
 Một điểm khác biệt mạnh mẽ khác giữa Aurora và các engine RDS thông thường là với Aurora bạn có thể có **tối đa 15 replica**, và **bất kỳ replica nào** cũng có thể là **failover target**. Thay vì chỉ có một primary instance và một standby replica như các engine không phải Aurora, với Aurora bạn có **15 replica khác nhau** để lựa chọn failover. Và thao tác failover sẽ **nhanh hơn nhiều** vì **không cần phải thực hiện bất kỳ thay đổi storage nào**.
 
+![[Pasted image 20260730204255.png]]
+
 Ngoài độ bền vững mà cluster volume mang lại, còn một số yếu tố quan trọng khác bạn cần biết. **Shared volume của cluster** dựa trên **SSD storage** theo mặc định, nên cung cấp **IOPS cao và latency thấp**. Đây là **storage hiệu năng cao mặc định**; bạn **không có tùy chọn** sử dụng magnetic storage.
 
 **Cách tính phí storage** cũng rất khác so với các engine RDS thông thường. Với Aurora, bạn **không cần allocate** lượng storage mà cluster sử dụng. Khi tạo Aurora cluster, bạn **không chỉ định** dung lượng storage cần thiết. Storage chỉ đơn giản dựa trên **những gì bạn tiêu thụ**. Khi bạn lưu trữ dữ liệu lên đến giới hạn **128 TiB**, bạn sẽ bị tính phí theo **mức tiêu thụ**.
@@ -27,6 +29,8 @@ Cần lưu ý rằng kiến trúc high-water mark này **đang được AWS thay
 Vì storage thuộc về **cluster** chứ không phải instance, nên **replica có thể được thêm và xóa** mà **không cần provisioning hoặc xóa storage**, điều này **cải thiện rất lớn** tốc độ và hiệu quả của bất kỳ thay đổi replica nào trong cluster.
 
 Kiến trúc cluster này cũng **thay đổi phương thức truy cập** so với RDS. Aurora cluster, giống như RDS, sử dụng **endpoint**. Đây là các địa chỉ DNS dùng để kết nối tới cluster. Khác với RDS, Aurora cluster có **nhiều endpoint** sẵn có cho ứng dụng. Tối thiểu, bạn có **cluster endpoint** và **reader endpoint**. **Cluster endpoint** luôn trỏ tới **primary instance**, và đây là endpoint có thể dùng cho **cả đọc và ghi**. **Reader endpoint** cũng sẽ trỏ tới primary instance nếu chỉ có mỗi nó, nhưng nếu có replica, thì reader endpoint sẽ **load balance** trên tất cả các replica sẵn có, và có thể dùng cho **thao tác đọc**. Điều này giúp **dễ dàng hơn nhiều** trong việc quản lý **read scaling** với Aurora so với RDS, vì khi bạn thêm các replica mới có thể dùng cho đọc, reader endpoint sẽ **tự động được cập nhật** để load balance trên các replica mới này. Bạn cũng có thể tạo **custom endpoint**, và ngoài ra, **mỗi instance** – primary và bất kỳ replica nào – đều có **endpoint riêng**. Vì vậy Aurora cho phép kiến trúc **tùy chỉnh và phức tạp hơn nhiều** so với RDS.
+
+![[Pasted image 20260730204342.png]]
 
 Bây giờ hãy chuyển sang nói về **chi phí**. Với Aurora, một trong những điểm bất lợi lớn nhất là **không có tùy chọn free tier**. Bạn **không thể dùng Aurora** trong free tier, vì Aurora **không hỗ trợ** các micro instance có sẵn trong free tier. Nhưng đối với bất kỳ instance nào lớn hơn RDS single-AZ micro-sized, Aurora mang lại **giá trị tốt hơn nhiều**.
 

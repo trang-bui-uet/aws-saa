@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Route 53 - Global DNS/7 [DEMO] Using R53 and Failover Routing-PART1.md",
+                "file": "8. HA & SCALING/6 Launch Configuration and Templates.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7 [DEMO] Using R53 and Failover Routing-PART1"
-            }
-          },
-          {
-            "id": "5f63f61a9a8a9dd2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "7. NETWORK STORAGE & DATA LIFECYCLE/3 Implementing EFS - PART2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3 Implementing EFS - PART2"
+              "title": "6 Launch Configuration and Templates"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 405.5078125
+    "width": 401.5
   },
   "right": {
     "id": "2fc9c1f8e2341a29",
@@ -212,44 +197,47 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5f63f61a9a8a9dd2",
+  "active": "80a27bcd3b8076e0",
   "lastOpenFiles": [
-    "7. NETWORK STORAGE & DATA LIFECYCLE/2 Implementing EFS - PART1.md",
-    "7. NETWORK STORAGE & DATA LIFECYCLE/1 EFS Architecture.md",
-    "Pasted image 20260731224748.png",
+    "8. HA & SCALING/5 Application Load balancing (ALB) vs Network Load Balancing (NLB).md",
+    "_Terms/ICMP.md",
+    "_Attachments/Pasted image 20260805221942.png",
+    "_Attachments/Pasted image 20260805221448.png",
+    "_Terms/SNI.md",
+    "_Terms",
+    "8. HA & SCALING/21 Gateway Load Balancer.md",
+    "_Attachments/Pasted image 20260805213322.png",
+    "8. HA & SCALING/4 Elastic Load Balancer Architecture - PART2.md",
+    "8. HA & SCALING/3 Elastic Load Balancer Architecture - PART1.md",
+    "5. Route 53 - Global DNS/7 [DEMO] Using R53 and Failover Routing-PART1.md",
+    "Pasted image 20260805213159.png",
+    "Pasted image 20260805213216.png",
+    "Pasted image 20260805213210.png",
+    "8. HA & SCALING/2 Evolution of the Elastic Load Balancer.md",
+    "_Attachments/Pasted image 20260803230851.png",
+    "8. HA & SCALING/1 Regional and Global AWS Architecture.md",
+    "_Attachments/Pasted image 20260803224317.png",
+    "Pasted image 20260803224249.png",
+    "8. HA & SCALING/20 [AdvancedDemo] Architecture Evolution - STAGE6.md",
+    "Untitled.md",
+    "8. HA & SCALING/19 [AdvancedDemo] Architecture Evolution - STAGE 5 - PART2.md",
+    "8. HA & SCALING/18 [AdvancedDemo] Architecture Evolution - STAGE 5 - PART1.md",
+    "8. HA & SCALING/17 [AdvancedDemo] Architecture Evolution - STAGE4.md",
+    "8. HA & SCALING/16 [AdvancedDemo] Architecture Evolution - STAGE3.md",
+    "8. HA & SCALING/15 [AdvancedDemo] Architecture Evolution - STAGE2.md",
+    "8. HA & SCALING/14 [AdvancedDemo] Architecture Evolution - STAGE1 - PART2.md",
+    "8. HA & SCALING/13 [AdvancedDemo] Architecture Evolution - STAGE1 - PART1.md",
+    "8. HA & SCALING/12 [DEMO] Seeing Session Stickiness in Action.md",
+    "8. HA & SCALING/11 SSL Offload & Session Stickiness.md",
+    "8. HA & SCALING/10 ASG HealthCheck Comparison - EC2 vs ELB.md",
+    "8. HA & SCALING/9 ASG Lifecycle Hooks.md",
+    "8. HA & SCALING/8 ASG Scaling Policies.md",
+    "8. HA & SCALING/7 Auto-Scaling Groups.md",
+    "8. HA & SCALING/6 Launch Configuration and Templates.md",
     "7. NETWORK STORAGE & DATA LIFECYCLE/5 AWS Backup.md",
-    "7. NETWORK STORAGE & DATA LIFECYCLE/Untitled 5.md",
-    "7. NETWORK STORAGE & DATA LIFECYCLE/4 [DEMO] Using EFS with Wordpress.md",
-    "7. NETWORK STORAGE & DATA LIFECYCLE/3 Implementing EFS - PART2.md",
-    "6. Relational Database Service (RDS)/3 ACID vs BASE.md",
+    "8. HA & SCALING",
+    "_Attachments/Pasted image 20260731224748.png",
     "7. NETWORK STORAGE & DATA LIFECYCLE",
-    "6. Relational Database Service (RDS)/2 Database Refresher & MODELS - PART2.md",
-    "6. Relational Database Service (RDS)/1 Database Refresher & MODELS - PART1.md",
-    "6. Relational Database Service (RDS)/21 Database Migration Service (DMS).md",
-    "6. Relational Database Service (RDS)/20 Relational Database Service (RDS) - RDS Proxy.md",
-    "_Attachments/Pasted image 20260730220503.png",
-    "_Attachments/Pasted image 20260730210338.png",
-    "_Attachments/Pasted image 20260716212404.png",
-    "6. Relational Database Service (RDS)/19 Multi-master writes.md",
-    "6. Relational Database Service (RDS)/18 Aurora Global Database.md",
-    "6. Relational Database Service (RDS)/17 Aurora Serverless.md",
-    "6. Relational Database Service (RDS)/16 Aurora Architecture.md",
-    "_Attachments/Pasted image 20260730204342.png",
-    "_Attachments/Pasted image 20260730204255.png",
-    "6. Relational Database Service (RDS)/15 RDS Custom.md",
-    "_Attachments/Pasted image 20260729012157.png",
-    "6. Relational Database Service (RDS)/14 RDS Data Security.md",
-    "_Attachments/Pasted image 20260729011327.png",
-    "_Attachments/Pasted image 20260729011212.png",
-    "6. Relational Database Service (RDS)/13 [DEMO] MultiAZ & Snapshot Restore with RDS - PART2.md",
-    "6. Relational Database Service (RDS)/12 [DEMO] MultiAZ & Snapshot Restore with RDS - PART1.md",
-    "6. Relational Database Service (RDS)/11 RDS Read-Replicas.md",
-    "6. Relational Database Service (RDS)/10 RDS Automatic Backup, RDS Snapshots and Restore.md",
-    "6. Relational Database Service (RDS)/9 Relational Database Service (RDS) MultiAZ - Instance and Cluster.md",
-    "6. Relational Database Service (RDS)/7 [DEMO] Migrating EC2 DB into RDS - PART1.md",
-    "6. Relational Database Service (RDS)/6 Relational Database Service (RDS) Architecture.md",
-    "1. VPC/01 VPC sizing and structure.md",
-    "_Attachments/Pasted image 20260716212600.png",
     "6. Relational Database Service (RDS)",
     "5. Route 53 - Global DNS",
     "4. ADVANCED EC2",
